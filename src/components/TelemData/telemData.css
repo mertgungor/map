@@ -1,0 +1,35 @@
+.data-container {
+  display: flex;
+  flex-direction: row;
+  width: 90%;
+  height: 90%;
+  border: 2px solid black;
+  color: #cccccc;
+  justify-content: stretch;
+}
+
+.left-side {
+  margin: 2%;
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  height: 100%;
+  align-items: flex-start;
+
+}
+
+.right-side {
+  margin: 2%;
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  height: 100%;
+  align-items: flex-start;
+
+}
+
+.data-text{
+    width: 50%;
+    margin: 4px;
+    font-size: 11px;
+}

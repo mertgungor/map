@@ -1,0 +1,56 @@
+{
+  "name": "dashboard-design",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@react-google-maps/api": "^1.13.0",
+    "@react-three/cannon": "^4.0.1",
+    "@react-three/drei": "^7.17.2",
+    "@react-three/fiber": "^7.0.17",
+    "@testing-library/jest-dom": "^5.14.1",
+    "@testing-library/react": "^11.2.7",
+    "@testing-library/user-event": "^12.8.3",
+    "chart.js": "^3.5.0",
+    "drei": "^2.2.21",
+    "express": "^4.17.1",
+    "is": "^3.3.0",
+    "now": "^21.0.1",
+    "react": "^17.0.2",
+    "react-chartjs-2": "^3.0.4",
+    "react-dom": "^17.0.2",
+    "react-google-maps": "^9.4.5",
+    "react-scripts": "4.0.3",
+    "redux": "^4.1.1",
+    "serialport": "^9.2.4",
+    "socket.io": "^4.3.1",
+    "socket.io-client": "^4.3.2",
+    "styled-components": "^5.3.3",
+    "three": "^0.133.1",
+    "use-cannon": "^0.5.3",
+    "web-vitals": "^1.1.2"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
