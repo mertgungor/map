@@ -7,8 +7,8 @@ const deg2rad = degrees => degrees * (Math.PI / 180);
 
 function Box(props) {
   const box_ref = useRef()
-  const [ref, api] = useBox(() => ({ mass: 1, position: [0, 0, 0] }));
-  {console.log(props.data.T_GYRO_R)}
+  const [api] = useBox(() => ({ mass: 1, position: [0, 0, 0] }));
+  //console.log(props.data.T_GYRO_R)
   useFrame(() => {
     box_ref.current.rotation.y = deg2rad(props.data.T_GYRO_Y);
     box_ref.current.rotation.x = deg2rad(props.data.T_GYRO_R);
