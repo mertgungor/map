@@ -92,8 +92,8 @@ const emit_packet_t = (socket, n) => {
     T_PACKET_COUNT: package_count_t,
     T_PACKET_TYPE: "T",
     T_TP_ALTITUDE: 21, // relative to ground level.The resolution must be 0.1 
-    T_TP_TEMP: 22,
-    T_TP_VOLTAGE: 23,
+    T_TP_TEMP: Math.round(Math.random()*4*1000)/1000,
+    T_TP_VOLTAGE: Math.round(Math.random()*4*1000)/1000,
     T_GYRO_R: 24 + n/2,// degrees per second
     T_GYRO_P: 25 + n/2,
     T_GYRO_Y: 26 + n/2,
@@ -120,9 +120,9 @@ const emit_packet_c = (socket, n) => {
     C_PACKET_TYPE: "C",
     C_MODE: "F", // F for flight S for simulation
     C_TP_RELEASED: "N", //  ‘N’ for not released and ‘R’ for released
-    C_ALTITUDE: 7, // resolution must be 0.1 meters. Relative to ground
-    C_TEMP: 8, // is the temperature in degrees Celsius with a resolution of 0.1 degrees C.
-    C_VOLTAGE: 9, // The resolution must be 0.01 volts.
+    C_ALTITUDE: Math.round(Math.random()*4*1000)/1000, // resolution must be 0.1 meters. Relative to ground
+    C_TEMP: Math.round(Math.random()*4*1000)/1000, // is the temperature in degrees Celsius with a resolution of 0.1 degrees C.
+    C_VOLTAGE: Math.round(Math.random()*4*1000)/1000, // The resolution must be 0.01 volts.
     C_GPS_TIME: 10, // UTC and have a resolution of a second.
     C_GPS_LATITUDE: 11, // with a resolution of 0.0001 degrees
     C_GPS_LONGITUDE: 12,
@@ -137,9 +137,9 @@ const emit_packet_c = (socket, n) => {
     //CMD,<TEAM_ID>,SIM,<MODE>  mods: ‘ENABLE’  ‘ACTIVATE’  ‘DISABLE’
     //CMD,<TEAM ID>,SIMP,<PRESSURE> (101325 Pascals = approximately sea level).
 
-    X_SPEED: 35,
-    X_REVOLUTION: 36,
-    X_PRESSURE: 37
+    X_SPEED: Math.round(Math.random()*4*1000)/1000,
+    X_REVOLUTION: Math.round(Math.random()*4*1000)/1000,
+    X_PRESSURE: Math.round(Math.random()*4*1000)/1000
   };
   // Emitting a new message. Will be consumed by the client
   socket.emit("FromC", response);

@@ -8,13 +8,22 @@ const LineChart = (props) => {
       <Line
         data={{
           labels: props.labels,
+          
           datasets: [
             {
               label: props.label,
               data: props.dataArray,
+              backgroundColor: [
+                '#964267'
+              ],
+              borderColor: [
+                '#964267'
+              ],
             },
+            
           ],
         }}
+        
         height={400}
         width={600}
         options={{
@@ -22,6 +31,7 @@ const LineChart = (props) => {
           animation: {
             duration: 0,
           },
+          
         }}
       />
     </div>
