@@ -40,7 +40,7 @@ io_c.on("connection", (socket) => {
     clearInterval(interval_c);
   }
 
-  if(telem_on_off == 1){
+  if(telem_on_off === 0){
     interval_c = setInterval(() => emit_packet_c(socket, package_count_c), 1000);
   }
 
@@ -55,7 +55,7 @@ io_t.on("connection", (socket) => {
   if (interval_t) {
     clearInterval(interval_t);
   }
-  if(telem_on_off == 1){
+  if(telem_on_off === 0){
     interval_t = setInterval(() => emit_packet_t(socket, package_count_t), 250);
   }
 

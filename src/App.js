@@ -7,6 +7,8 @@ import TelemData from "./components/TelemData/TelemData";
 import Map from "./components/Map/Map";
 import LineChart from "./components/LineChart/LineChart";
 import Cube from "./components/Cube/Cube";
+import TimeInput from "./components/TimeInput/TimeInput";
+import BaudInput from "./components/BaudInput/BaudInput";
 
 const ENDPOINT_C = "http://127.0.0.1:4848/";
 const ENDPOINT_T = "http://127.0.0.1:5050/";
@@ -28,6 +30,9 @@ function App() {
   const [response_c, setResponse_c] = useState("");
   const [response_t, setResponse_t] = useState("");
   const [telem_on_off, setTelem_on_off] = useState(0);
+  const [pop_up_state, set_pop_up_state] = useState(0)
+  const [time, setTime] = useState()
+  const [baudrate, setBaudrate] = useState(9600)
 
   
 
@@ -39,6 +44,24 @@ function App() {
     }else{
       socket_command.emit("send_command", 0)
       setTelem_on_off(0)
+    }
+  }
+
+  const setTimeHandler = () => {
+    if( pop_up_state === 0){
+      set_pop_up_state(1)
+    }
+    else{
+      set_pop_up_state(0)
+    }
+  }
+
+  const setBaudHandler = () => {
+    if( pop_up_state === 0){
+      set_pop_up_state(2)
+    }
+    else{
+      set_pop_up_state(0)
     }
   }
 
@@ -81,8 +104,10 @@ function App() {
 
   return (
     <div className="App">
+      {pop_up_state===2 ? <BaudInput dismiss={setBaudHandler} setBaudrate={setBaudrate}></BaudInput> : console.log()}
+      {pop_up_state===1 ? <TimeInput dismiss={setTimeHandler} setTime={setTime}></TimeInput> : console.log()}
       <div className="sidebar">
-        <Button telem={setTelemOnOffHandler}/>
+        <Button telem={setTelemOnOffHandler} set_time={setTimeHandler} time={time} setBaud={setBaudHandler} baudrate={baudrate}/>
       </div>
       <div className="functional-elements">
         <div className="card-container">

@@ -27,3 +27,8 @@
     flex-direction: column;
 }
 
+.info-text{
+    margin-left: 10%;
+    color: #41a672;
+}
+
