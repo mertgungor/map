@@ -10,9 +10,9 @@ function Box(props) {
   const [api] = useBox(() => ({ mass: 1, position: [0, 0, 0] }));
   //console.log(props.data.T_GYRO_R)
   useFrame(() => {
-    box_ref.current.rotation.y = deg2rad(props.data.T_GYRO_Y);
-    box_ref.current.rotation.x = deg2rad(props.data.T_GYRO_R);
-    box_ref.current.rotation.z = deg2rad(props.data.T_GYRO_P);
+    box_ref.current.rotation.y = deg2rad(props.data.GYRO_Y);
+    box_ref.current.rotation.x = deg2rad(props.data.GYRO_R);
+    box_ref.current.rotation.z = deg2rad(props.data.GYRO_P);
   })
   
   

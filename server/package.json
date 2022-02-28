@@ -13,6 +13,7 @@
     "buffer": "^6.0.3",
     "express": "^4.17.1",
     "module": "^1.2.5",
+    "mqtt": "^4.3.6",
     "serialport": "^9.2.5",
     "socket.io": "^4.3.1"
   }

@@ -85,9 +85,9 @@ function App() {
   const dataChangeHandler = () => {
     setCurrentData((prev) => {
       //const updated = [...prev, response.C_TEAM_ID];
-      prev.alt = [prev.alt[1], prev.alt[2], prev.alt[3], prev.alt[4],  response_c.C_ALTITUDE];
-      prev.temp = [prev.temp[1], prev.temp[2], prev.temp[3], prev.temp[4],  response_c.C_TEMP];
-      prev.volt = [prev.volt[1], prev.volt[2], prev.volt[3], prev.volt[4],  response_c.C_VOLTAGE];
+      prev.alt = [prev.alt[1], prev.alt[2], prev.alt[3], prev.alt[4],  response_c.ALTITUDE];
+      prev.temp = [prev.temp[1], prev.temp[2], prev.temp[3], prev.temp[4],  response_c.TEMP];
+      prev.volt = [prev.volt[1], prev.volt[2], prev.volt[3], prev.volt[4],  response_c.VOLTAGE];
       prev.press = [prev.press[1], prev.press[2], prev.press[3], prev.press[4],  response_c.X_PRESSURE];
       prev.rev = [prev.rev[1], prev.rev[2], prev.rev[3], prev.rev[4],  response_c.X_REVOLUTION];
       prev.speed = [prev.speed[1], prev.speed[2], prev.speed[3], prev.speed[4],  response_c.X_SPEED];
@@ -95,12 +95,15 @@ function App() {
     });
   };
 
+  
+
   const labelChangeHandler = () => {
     setCurrentLabel((prev) => {
       const incremented = prev[4] + 1;
       return [prev[1], prev[2], prev[3], prev[4], incremented];
     });
   };
+
 
   return (
     <div className="App">
@@ -115,7 +118,7 @@ function App() {
             <TelemData telemetry_c={response_c} telemetry_t={response_t}/>
           </div>
           <div className="card">
-              <Cube data={response_t} roll={response_t.T_GYRO_R} pitch={response_t.T_GYRO_P} yaw={response_t.T_GYRO_Y}/>
+              <Cube data={response_t} roll={response_t.GYRO_R} pitch={response_t.GYRO_P} yaw={response_t.GYRO_Y}/>
           </div>
           <div className="card">
             <Map />
