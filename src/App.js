@@ -109,72 +109,15 @@ function App() {
     <div className="App">
       {pop_up_state===2 ? <BaudInput dismiss={setBaudHandler} setBaudrate={setBaudrate}></BaudInput> : console.log()}
       {pop_up_state===1 ? <TimeInput dismiss={setTimeHandler} setTime={setTime}></TimeInput> : console.log()}
-      <div className="sidebar">
-        <Button telem={setTelemOnOffHandler} set_time={setTimeHandler} time={time} setBaud={setBaudHandler} baudrate={baudrate}/>
-      </div>
+     
       <div className="functional-elements">
         <div className="card-container">
-          <div className="card">
-            <TelemData telemetry_c={response_c} telemetry_t={response_t}/>
-          </div>
-          <div className="card">
-              <Cube data={response_t} roll={response_t.GYRO_R} pitch={response_t.GYRO_P} yaw={response_t.GYRO_Y}/>
-          </div>
+          
           <div className="card">
             <Map />
           </div>
         </div>
-        <div className="graph-and-cam-container">
-          <div className="graph">
-            <div className="graph2">
-              <LineChart
-                label="temperature"
-                dataArray={currentData.temp}
-                labels={currentLabel}
-              ></LineChart>
-              <LineChart
-                label="pressure"
-                dataArray={currentData.press}
-                labels={currentLabel}
-              ></LineChart>
-            </div>
 
-            <div className="graph2">
-              <LineChart
-                label="battery voltage"
-                dataArray={currentData.volt}
-                labels={currentLabel}
-              ></LineChart>
-              <LineChart
-                label="revolution"
-                dataArray={currentData.rev}
-                labels={currentLabel}
-              ></LineChart>
-            </div>
-
-            <div className="graph2">
-              <LineChart
-                label="altitude"
-                dataArray={currentData.alt}
-                labels={currentLabel}
-              ></LineChart>
-              <LineChart
-                label="speed"
-                dataArray={currentData.speed}
-                labels={currentLabel}
-              ></LineChart>
-            </div>
-          </div>
-          
-          {useEffect(() => {
-              dataChangeHandler();
-              labelChangeHandler();
-          }, [response_c])} 
-
-          <div className="cam-container">
-            <Cam />
-          </div>
-        </div>
       </div>
     </div>
   );
